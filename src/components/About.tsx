@@ -1,7 +1,15 @@
 import { Mail, Linkedin, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/hooks/use-toast";
 
 const About = () => {
+  const copyEmail = () => {
+    navigator.clipboard.writeText("matheusmachado590@gmail.com");
+    toast({
+      title: "Email copiado!",
+      description: "matheusmachado590@gmail.com foi copiado para a área de transferência.",
+    });
+  };
   const competencies = [
     "Análise de dados com SQL, Python e Power BI",
     "Construção de dashboards executivos",
@@ -72,13 +80,13 @@ const About = () => {
             <div className="glass-card p-8 rounded-2xl border-accent/20 hover-lift">
               <h3 className="text-xl font-bold mb-4">Vamos conversar?</h3>
               <div className="space-y-3">
-                <a 
-                  href="mailto:matheusmachado590@gmail.com"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
+                <button 
+                  onClick={copyEmail}
+                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors cursor-pointer"
                 >
                   <Mail className="w-5 h-5" />
                   <span>matheusmachado590@gmail.com</span>
-                </a>
+                </button>
                 <Button variant="outline" className="w-full hover-lift" asChild>
                   <a href="https://www.linkedin.com/in/matheus-mendes-machado/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 h-5 w-5" />

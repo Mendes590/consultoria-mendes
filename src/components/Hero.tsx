@@ -1,8 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Database, Code, BarChart3 } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
+import { toast } from "@/hooks/use-toast";
 
 const Hero = () => {
+  const copyEmail = () => {
+    navigator.clipboard.writeText("matheusmachado590@gmail.com");
+    toast({
+      title: "Email copiado!",
+      description: "matheusmachado590@gmail.com foi copiado para a área de transferência.",
+    });
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -67,10 +76,10 @@ const Hero = () => {
 
         {/* Contact info */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          <a href="mailto:matheusmachado590@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+          <button onClick={copyEmail} className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer">
             <Mail className="w-4 h-4" />
             matheusmachado590@gmail.com
-          </a>
+          </button>
           <a href="https://www.linkedin.com/in/matheus-mendes-machado/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
             <Linkedin className="w-4 h-4" />
             LinkedIn

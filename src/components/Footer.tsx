@@ -1,7 +1,16 @@
 import { Mail, Linkedin } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("matheusmachado590@gmail.com");
+    toast({
+      title: "Email copiado!",
+      description: "matheusmachado590@gmail.com foi copiado para a área de transferência.",
+    });
+  };
 
   return (
     <footer className="border-t border-border/50 bg-background">
@@ -40,11 +49,6 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="text-muted-foreground hover:text-accent transition-colors">
-                  Portfólio
-                </a>
-              </li>
-              <li>
                 <a href="#contato" className="text-muted-foreground hover:text-accent transition-colors">
                   Contato
                 </a>
@@ -56,13 +60,13 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contato</h4>
             <div className="space-y-3">
-              <a
-                href="mailto:matheusmachado590@gmail.com"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+              <button
+                onClick={copyEmail}
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors cursor-pointer"
               >
                 <Mail className="w-4 h-4" />
                 matheusmachado590@gmail.com
-              </a>
+              </button>
               <a
                 href="https://www.linkedin.com/in/matheus-mendes-machado/"
                 target="_blank"
