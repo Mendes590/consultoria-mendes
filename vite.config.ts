@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/consultoria-mendes/", // 👈 NOME EXATO do repositório no GitHub
+  base: "/consultoria-mendes/", // 👈 NOME EXATO do repositório
 
   server: {
     host: "::",
