@@ -39,9 +39,9 @@ const About = () => {
               </div>
 
               <div className="glass-card p-6 rounded-xl hover-lift">
-                <h3 className="font-semibold text-lg mb-2 text-accent">Pipeline Capital Tech</h3>
+                <h3 className="font-semibold text-lg mb-2 text-accent">Data & Analytics at Pipeline Capital Tech</h3>
                 <p className="text-muted-foreground">
-                  Desenvolvimento de dashboards estratégicos, consultas SQL avançadas, organização de bases em MySQL, automações com Python (Pandas) e integrações entre sistemas.
+                  Desenvolvi dashboards estratégicos, consultas SQL avançadas, organização de bases em MySQL, automações com Python (Pandas) e integrações entre sistemas.
                 </p>
               </div>
 
