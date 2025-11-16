@@ -1,6 +1,15 @@
 import { Mail, Linkedin } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const copyEmail = () => {
+    navigator.clipboard.writeText("matheusmachado590@gmail.com");
+    toast({
+      title: "Email copiado!",
+      description: "matheusmachado590@gmail.com foi copiado para a área de transferência.",
+    });
+  };
+
   return (
     <section id="contato" className="section-padding bg-secondary/30">
       <div className="max-w-4xl mx-auto">
@@ -14,9 +23,9 @@ const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <a
-            href="mailto:matheusmachado590@gmail.com"
-            className="glass-card p-8 rounded-2xl hover-lift group transition-all"
+          <button
+            onClick={copyEmail}
+            className="glass-card p-8 rounded-2xl hover-lift group transition-all text-left w-full"
           >
             <div className="flex items-start gap-4">
               <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
@@ -28,11 +37,11 @@ const Contact = () => {
                   matheusmachado590@gmail.com
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Envie um e-mail direto
+                  Clique para copiar o e-mail
                 </p>
               </div>
             </div>
-          </a>
+          </button>
 
           <a
             href="https://www.linkedin.com/in/matheus-mendes-machado/"
